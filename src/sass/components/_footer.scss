@@ -1,0 +1,318 @@
+.footer {
+  width: 100%;
+  height: fit-content;
+  margin: 40px auto 0px;
+  background-image: url(../../assets/images/footer-background.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  display: block;
+
+  @include tab-land {
+    background-image: none;
+    background-color: $footer-bg;
+    padding-bottom: 10px;
+  }
+
+  @include mobile {
+    background-image: none;
+    // background-color: $footer-color;
+    height: fit-content;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .container {
+    width: 80%;
+    margin: auto;
+    padding: 60px 0;
+    color: $txt-second-color;
+    font-size: 1.5rem;
+
+    @include tab-land {
+      width: 100%;
+      padding: 20px;
+    }
+
+    @include mobile {
+      padding: 0;
+      width: 100%;
+    }
+  }
+
+  .logo {
+    width: 100%;
+    @include mobile {
+      @include flex(center, center);
+      padding: 20px 0 0;
+      img {
+        height: 32px;
+      }
+    }
+  }
+
+  .line {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__left {
+      flex: 2;
+
+      @include mobile {
+        width: 100%;
+      }
+
+      &__row {
+        display: flex;
+        margin-top: 60px;
+
+        @include mobile {
+          margin-top: 20px;
+          flex-direction: column;
+        }
+
+        &__col {
+          margin-right: 160px;
+
+          @include tab-land {
+            margin-right: 100px;
+          }
+
+          @include tab-port {
+            margin-right: 60px;
+          }
+
+          @include mobile {
+            width: 100%;
+          }
+        }
+
+        b {
+          font-weight: 600;
+        }
+      }
+
+      &__btn {
+        margin: 12px 0px;
+        background-color: $primary-color;
+        &:hover {
+          background-color: $third-color !important;
+          color: $primary-color !important;
+        }
+      }
+    }
+
+    &__right {
+      flex: 1;
+      text-align: right;
+      margin: 60px 0 0;
+
+      @include tab-land {
+        margin-bottom: 20px;
+      }
+
+      @include mobile {
+        width: 100%;
+        margin: 8px 0;
+      }
+
+      #followTitle {
+        @include mobile {
+          @include flex(center, center);
+        }
+      }
+
+      &__icon {
+        @include flex(center, right);
+        margin-bottom: 32px;
+
+        @include mobile {
+          width: 100%;
+          @include flex(center, center);
+          margin: 20px 0;
+        }
+
+        &__item {
+          margin-left: 32px;
+          width: 40px;
+          height: 40px;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          border-radius: 50%;
+          box-shadow: 0px 4px 4px #00000040, 0px 8px 24px 0px #18274b14;
+          cursor: pointer;
+
+          &:first-child {
+            @include mobile {
+              margin-left: 0;
+            }
+          }
+
+          &:hover {
+            opacity: 0.8;
+            transition: transform 0.3s ease;
+          }
+        }
+      }
+
+      p {
+        cursor: text;
+
+        @include mobile {
+          text-align: center;
+          font-size: 1.3rem;
+        }
+      }
+
+      #address {
+        margin-top: 12px;
+        padding-left: 40px;
+
+        @include mobile {
+          margin-top: 8px;
+          padding-left: 0;
+        }
+      }
+
+      #logoSale {
+        margin-top: 28px;
+
+        @include mobile {
+          @include flex(center, center);
+          margin-top: 12px;
+          width: 100%;
+        }
+
+        img {
+          width: 40%;
+
+          @include tab-land {
+            width: 50%;
+          }
+
+          @include tab-port {
+            width: 70%;
+          }
+
+          @include mobile {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+
+    @include mobile {
+      @include flex(center, left);
+      color: $primary-color;
+      margin-bottom: 8px;
+      position: relative;
+      font-weight: 500;
+    }
+
+    .openIcon {
+      position: absolute;
+      right: 12px;
+      display: none;
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    @include mobile {
+      margin-bottom: 8px;
+      display: none;
+      &.active {
+        @include flex(center, left);
+        flex-direction: column;
+      }
+
+      &__item {
+        margin-top: 12px;
+        @include mobile {
+          width: 100%;
+          color: $txt-second-color;
+          margin-top: 0;
+          margin-bottom: 12px;
+          @include flex(center, left);
+        }
+      }
+    }
+  }
+
+  ul {
+    @include mobile {
+      margin-bottom: 8px;
+      &.active {
+        @include flex(center, left);
+      }
+    }
+    &__item {
+      margin-top: 12px;
+      @include mobile {
+        color: $txt-main-color;
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
+    }
+
+    .first {
+      @include tab-port {
+        width: 80%;
+      }
+    }
+  }
+
+  .input {
+    width: calc(100% - 200px);
+    margin: 12px 0px;
+
+    &:focus, &:hover {
+      border-color: $primary-color !important;
+    }
+    @include mobile {
+      width: calc(100% - 86px);
+    }
+  }
+
+  .copyright {
+    font-size: 1.3rem;
+    font-weight: 300;
+    padding-left: 120px;
+    padding-bottom: 60px;
+
+    @include tab-land {
+      width: 100%;
+      padding: 0 40px 0;
+    }
+
+    @include mobile {
+      width: 100%;
+      @include flex(center, center);
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.instagram {
+  color: white;
+  background-color: #f00073;
+}

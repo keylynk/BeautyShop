@@ -1,0 +1,205 @@
+.product-list-reponsive {
+  display: none;
+  width: 100%;
+
+  @include tab-land {
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+    background-color: transparent;
+  }
+
+  @include tab-port {
+    background-color: $product-list-bg;
+    padding: 12px 0;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.card-mobile {
+  $product-height: 140px;
+  font-size: 1.6rem;
+  position: relative;
+  background-color: white;
+  width: 23%;
+  height: 400px;
+  margin: 0 0.5% 2%;
+  overflow: hidden;
+
+  @include tab-port {
+    background-color: transparent;
+    margin: 0;
+    padding: 10px 20px 10px 32px;
+    width: 100%;
+    height: $product-height;
+    overflow: hidden;
+    display: flex;
+    font-size: 2rem;
+  }
+
+  @include mobile {
+    padding: 10px;
+    width: 100%;
+    overflow: hidden;
+    font-size: 1.5rem;
+  }
+
+  &__img {
+    @include flex(flex-start, flex-start);
+    img {
+      width: 100%;
+      @include tab-port {
+        height: calc($product-height - 20px);
+        width: auto;
+      }
+    }
+  }
+
+  &__info {
+    margin-top: 12px;
+    width: 100%;
+    padding: 0 10px;
+
+    @include tab-port {
+      margin-top: 0;
+      margin-left: 20px;
+      padding: 0;
+    }
+
+    &__title {
+      font-weight: 600;
+      color: $highlight;
+    }
+
+    &__price {
+      &__sale {
+        @include flex(center, flex-start);
+        margin: 4px 0;
+
+        &__origin {
+          text-decoration: line-through;
+          font-size: 80%;
+          margin-inline-end: 20px;
+        }
+
+        &__percent {
+          background-color: $second-color;
+          padding: 0 8px;
+          border-radius: 20px;
+          font-size: 90%;
+          font-weight: 500;
+        }
+      }
+
+      &__new {
+        color: $primary-color;
+        margin-top: 4px;
+        font-size: 115%;
+        font-weight: 600;
+      }
+    }
+  }
+  //
+  //   $margin-top: 10px;
+  //   $margin-begin: 10px;
+  //   height: $product-height;
+  //   padding: $margin-top $margin-begin;
+  //   width: 100%;
+
+  //   @include tab-port {
+  //   }
+
+  //   &__img {
+  //     top: $margin-top;
+  //     left: $margin-begin;
+  //     height: calc($product-height - $margin-top * 2);
+
+  //
+  //     @include tab-port {
+  //       width: 25%;
+  //     }
+  //     img {
+  //       max-width: calc($product-height - $margin-top * 2);
+  //       max-height: calc($product-height - $margin-top * 2);
+  //     }
+  //   }
+
+  //   &__info {
+  //     margin-left: 20px;
+  //     width: calc(75% - 20px);
+  //     position: absolute;
+  //     top: $margin-top;
+  //     right: $margin-begin;
+
+  //     }
+}
+
+//   @include mobile {
+//     &__img {
+//       position: absolute;
+//       top: $margin-top;
+//       left: $margin-begin;
+//       height: calc($product-height - $margin-top * 2);
+//       width: 25%;
+//       @include flex(flex-start, center);
+
+//       img {
+//         max-width: 100px;
+//         max-height: 100px;
+//       }
+//     }
+
+//     &__info {
+//       margin-left: 20px;
+//       width: calc(70% - 20px);
+//       position: absolute;
+//       top: $margin-top;
+//       right: $margin-begin;
+
+//       &__title {
+//         font-weight: 600;
+//         color: $highlight;
+//       }
+
+//       &__price {
+//         &__sale {
+//           @include flex(center, flex-start);
+
+//           &__origin {
+//             text-decoration: line-through;
+//             font-size: 1.2rem;
+//             margin-inline-end: 20px;
+
+//             @include tab-port {
+//               font-size: 1.4rem;
+//             }
+//           }
+
+//           &__percent {
+//             background-color: $second-color;
+//             padding: 0 8px;
+//             border-radius: 20px;
+
+//             @include tab-port {
+//               font-size: 1.6rem;
+//               font-weight: 500;
+//             }
+//           }
+//         }
+
+//         &__new {
+//           color: $primary-color;
+//           font-size: 1.5rem;
+//           font-weight: 600;
+
+//           @include tab-port {
+//             font-size: 2.2rem;
+//           }
+//         }
+//       }
+//     }
+
+//}

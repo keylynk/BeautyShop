@@ -1,0 +1,102 @@
+.register {
+  width: 60%;
+  margin: auto;
+  font-size: 1.5rem;
+
+  @include tab-land {
+    width: 80%;
+  }
+
+  @include tab-port {
+    width: 90%;
+  }
+
+  @include mobile {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .main {
+    width: 70%;
+    margin: 40px auto;
+
+    @include tab-land {
+      width: 70%;
+    }
+
+    @include tab-port {
+      width: 80%;
+    }
+
+    @include mobile {
+      width: 100%;
+      margin: 28px auto;
+    }
+  }
+
+  &__row {
+    display: flex;
+    width: 100%;
+    margin-top: 40px;
+    align-items: center;
+
+    @include mobile {
+      margin-top: 20px;
+    }
+
+    &__label {
+      font-weight: 400;
+      flex: 1;
+      color: $txt-main-color;
+    }
+
+    &__col {
+      justify-content: left;
+      flex: 2;
+
+      &__input{
+        &:focus, &:hover {
+          border-color: $primary-color !important;
+        }
+      }
+
+      @include tab-port {
+        flex: 2.5;
+      }
+    }
+
+    .two-cols {
+      margin: 0;
+
+      &__item {
+        flex: 1;
+      }
+
+      &__item:first-child {
+        margin-right: 20px;
+
+        @include tab-port {
+          margin-right: 10px;
+        }
+
+        @include mobile {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    &__input {
+      width: 100%;
+      &:focus, &:hover {
+        border-color: $primary-color !important;
+      }
+    }
+
+    &__note {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $mediumgrey;
+      margin-left: 4px;
+    }
+  }
+}

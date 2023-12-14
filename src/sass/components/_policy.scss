@@ -1,0 +1,73 @@
+.policy {
+  background-color: $second-color;
+  height: 160px;
+  width: 100%;
+  //   margin-top: 4px;
+  @include flex(center, space-between);
+
+  @include mobile {
+    height: 100px;
+  }
+
+  &__item {
+    @include flex(center, center);
+    height: 100%;
+    flex: 1;
+
+    &__icon {
+      margin: 0 20px;
+
+      @include tab-port {
+        display: none;
+      }
+    }
+
+    &__info {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+
+      &__title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 4px;
+
+        @include tab-port {
+          display: none;
+        }
+      }
+
+      &__sub {
+        font-size: 15px;
+        font-weight: 400;
+
+        @include tab-port {
+          display: none;
+        }
+      }
+
+      &__short {
+        display: none;
+
+        @include tab-port {
+          display: block;
+          font-size: 1.8rem;
+          padding: 8px;
+          text-align: center;
+        }
+
+        @include mobile {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: #ffffff66;
+    }
+
+    &:nth-child(odd) {
+      background-color: transparent;
+    }
+  }
+}

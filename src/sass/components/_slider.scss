@@ -1,0 +1,49 @@
+.home-slider {
+  width: 80%;
+  height: 48vw;
+  margin: 40px auto 0;
+  position: relative;
+  z-index: 98;
+
+  @include mobile {
+    width: 100%;
+    margin: 10px 0 20px;
+    padding: 0;
+  }
+
+  .next,
+  .prev {
+    width: 72px;
+    height: 72px;
+    background-color: transparent;
+    border-radius: 50%;
+    color: $lightgrey;
+    @include flex(center, center);
+    transform: 0.5s;
+    z-index: 5;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+
+    &:hover {
+      color: $mediumgrey;
+    }
+
+    @include tab-port {
+      display: none;
+    }
+  }
+
+  .next {
+    right: -100px;
+  }
+
+  .prev {
+    left: -100px;
+  }
+
+  img {
+    width: 100%;
+    height: fit-content;
+  }
+}

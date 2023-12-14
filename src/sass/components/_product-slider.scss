@@ -1,0 +1,45 @@
+.product-slider {
+  width: 72%;
+  height: fit-content;
+  padding: 0px 40px;
+  margin: 24px auto 0;
+  position: relative;
+
+  @include tab-land {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  .next,
+  .prev {
+    width: 72px;
+    height: 72px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 2px 2px 8px 0px #00000040;
+    @include flex(center, center);
+    transform: 0.5s;
+    z-index: 5;
+    cursor: pointer;
+    top: 50%;
+    position: absolute;
+    @include tab-port {
+      display: none;
+    }
+    &:hover {
+      background: $second-color;
+      color: white;
+    }
+  }
+
+  .next {
+    right: -10rem;
+  }
+
+  .prev {
+    left: -10rem;
+  }
+}

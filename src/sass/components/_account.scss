@@ -1,0 +1,86 @@
+.account {
+  background-color: $second-color;
+  height: 160px;
+  width: 100%;
+  @include flex(center, center);
+
+  @include tab-port {
+    background-color: $third-color;
+    height: 120px;
+  }
+
+  @include mobile {
+    margin: 20px 0;
+    @include flex(flex-end, center);
+    background-color: $third-color;
+    height: 100px;
+  }
+
+  &__icon {
+    @include flex(flex-end, center);
+    @include mobile {
+      margin: 0 12px 16px;
+    }
+  }
+
+  &__content {
+    font-weight: 600px;
+    color: $txt-main-color;
+
+    &__row {
+      margin: 12px;
+      @include flex(center, center);
+
+      @include mobile {
+        font-size: 1.2rem;
+        margin: 0 0 16px;
+      }
+
+      &:first-child {
+        @include mobile {
+          margin: 0 0 8px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    flex: 1;
+    cursor: pointer;
+    padding: 8px 24px;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 100px;
+    text-align: center;
+    position: relative;
+    transition: 0.4s all;
+    margin: 0 16px;
+
+    @include mobile {
+      padding: 4px 16px;
+      margin: 0 8px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $primary-color;
+      color: $txt-white;
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+      box-shadow: 2px 2px 8px 0px #00000040;
+    }
+
+    &.outline {
+      border: 1px solid $primary-color;
+      color: $txt-third-color;
+    }
+
+    &.fill {
+      background-color: $primary-color;
+      color: $txt-white;
+    }
+  }
+}

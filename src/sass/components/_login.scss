@@ -1,0 +1,125 @@
+.login {
+  width: 60%;
+  margin: auto;
+
+  @include tab-land {
+    width: 80%;
+  }
+
+  @include tab-port {
+    width: 90%;
+  }
+
+  @include mobile {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .main {
+    width: 48%;
+    margin: 28px auto;
+
+    @include tab-land {
+      width: 64%;
+    }
+
+    @include tab-port {
+      width: 60%;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding: 0 10px;
+    }
+  }
+
+  &__row:first-child {
+    margin-bottom: 28px;
+  }
+
+  &__forgot {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 20px;
+    text-decoration: underline;
+    color: $txt-main-color;
+    &:hover {
+      opacity: 0.8;
+      transition: transform 0.3s ease;
+    }
+  }
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+    margin: 32px auto;
+    width: 40%;
+
+    @include tab-port {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 60%;
+    }
+
+    &__item {
+      width: 52px;
+      height: 52px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      border-radius: 50%;
+      box-shadow: 0px 4px 4px #00000040, 0px 8px 24px 0px #18274b14;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  &__center {
+    @include flex(center, center);
+    margin: 40px 0;
+
+    &__navigation {
+      color: $txt-second-color;
+      a {
+        font-weight: 700;
+        color: $primary-color;
+        text-decoration: underline;
+        &:hover {
+          opacity: 0.8;
+          transition: transform 0.3s ease;
+        }
+      }
+    }
+  }
+
+  &__center:first-child {
+    margin-top: 48px;
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 44px;
+    color: #ffffff;
+    background: $btn-main-bg;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    cursor: pointer;
+    &:hover {
+      background-color: $third-color;
+      color: $primary-color;
+      box-shadow: 2px 2px 8px 0px #00000040;
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+  }
+}

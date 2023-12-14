@@ -1,0 +1,20 @@
+.category {
+  padding-inline-start: 0;
+  padding: 0 16px;
+
+  &__item {
+    margin: 12px 0;
+    text-transform: uppercase;
+    color: $txt-main-color;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    transition: 0.4s all;
+    padding: 12px 4px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+  }
+}
